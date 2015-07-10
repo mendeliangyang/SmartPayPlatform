@@ -32,7 +32,8 @@ public class Payment extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
+        request.setCharacterEncoding("utf-8");
         PaymentModel paymentModel = new PaymentModel();
         paymentModel.BANKMODE = request.getParameter("BANKMODE");
         paymentModel.BANKNO = request.getParameter("BANKNO");
@@ -42,7 +43,7 @@ public class Payment extends HttpServlet {
         //获取银行支付接口返回，并写入数据，推入历史
         //返回客户支付结果
         request.getRequestDispatcher("/MainSmartPayPage/CheckPayResult.jsp").forward(request, response);
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

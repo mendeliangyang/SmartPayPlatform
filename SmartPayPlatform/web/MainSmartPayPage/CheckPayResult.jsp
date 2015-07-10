@@ -5,7 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<%
+     request.setCharacterEncoding("utf-8");
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,11 +19,11 @@
         <table>
             <tr>
                 <td>
-                    订单编号：<input type="text" name="OWN_ID" readonly="true" value="${applyPayModel.OWN_ID}"> <br>
-                    支付金额：<input type="text" name="OWN_MONEY" readonly="true" value="${applyPayModel.OWN_MONEY}"> <br> 
-                    订单描述：<input type="text" name="OWN_PICTURE" readonly="true" value="${applyPayModel.OWN_PICTURE}"> <br> 
-                    银行/支付方式：<input type="text" name="BANKMODE"  readonly="true" value="广发"> <br> 
-                    银行卡号/支付账号：<input type="text" name="BANKNO"  readonly="true" value="88888888888888888"> <br> 
+                   订单编号：<input type="text" name="OWN_ID" readonly="true" value="<%request.setCharacterEncoding("utf-8"); out.print( request.getParameter("OWN_ID"));%>"> <br>
+                         支付金额：<input type="text" name="OWN_MONEY" readonly="true" value="<%request.setCharacterEncoding("utf-8"); out.print( request.getParameter("OWN_MONEY"));%>"> <br> 
+                         订单描述：<input type="text" name="OWN_PICTURE" readonly="true" value="<%request.setCharacterEncoding("utf-8"); out.print( request.getParameter("OWN_PICTURE"));%>"> <br> 
+                    银行/支付方式：<input type="text" name="BANKMODE"  readonly="true" value="<%request.setCharacterEncoding("utf-8"); out.print( request.getParameter("BANKMODE"));%>"> <br> 
+                    银行卡号/支付账号：<input type="text" name="BANKNO"  readonly="true" value="<% request.setCharacterEncoding("utf-8");out.print( request.getParameter("BANKNO"));%>"> <br> 
                 </td>
             </tr>
         </table>
